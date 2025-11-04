@@ -147,7 +147,7 @@ fitted_curve/g2/
 
 ## 许可证
 
-本项目采用GNU通用公共许可证（GPL v3）。
+本项目采用GNU通用公共许可证（GPL v3）。（pyside6是gnu 3.0的许可证）
 
 ## 联系方式
 
