@@ -46,10 +46,10 @@ pip install -r requirements.txt
 ```
 
 主要依赖库版本：
-- PySide6==6.6.0 （GUI框架）
-- numpy==1.26.0 （数值计算）
-- matplotlib==3.8.0 （绘图功能）
-- scipy==1.11.3 （科学计算和拟合算法）
+- PySide6 （GUI框架）
+- numpy （数值计算）
+- matplotlib （绘图功能）
+- scipy （科学计算和拟合算法）
 
 ## 使用方法
 
