@@ -1,0 +1,892 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file '曲线拟合-实验数据模式tSXeaE.ui'
+##
+## Created by: Qt User Interface Compiler version 6.10.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform, QTextCursor)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QFrame,
+    QGraphicsView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QRadioButton, QSizePolicy, QStatusBar,
+    QTextBrowser, QTextEdit, QWidget, QSpinBox)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(1000, 800)
+        MainWindow.setStyleSheet(u"QMianWindow{\n"
+"	background-color: rgb(0, 255, 255);\n"
+"}")
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.frame_5 = QFrame(self.centralwidget)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setGeometry(QRect(5, 5, 260, 300))
+        self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
+        self.textEdit = QTextEdit(self.frame_5)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(5, 35, 120, 260))
+        self.textEdit.setStyleSheet(u"QTextEdit{\n"
+"background : rgb(85, 255, 127)\n"
+"}")
+        self.label_8 = QLabel(self.frame_5)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(50, 10, 53, 20))
+        font = QFont()
+        font.setPointSize(11)
+        self.label_8.setFont(font)
+        self.textEdit_2 = QTextEdit(self.frame_5)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setGeometry(QRect(135, 35, 120, 260))
+        self.textEdit_2.setStyleSheet(u"QTextEdit{\n"
+"background : rgb(85, 255, 127)\n"
+"}")
+        self.label_9 = QLabel(self.frame_5)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(175, 10, 53, 20))
+        self.label_9.setFont(font)
+        self.pushButton_7 = QPushButton(self.centralwidget)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setGeometry(QRect(90, 310, 85, 30))
+        font1 = QFont()
+        font1.setPointSize(10)
+        self.pushButton_7.setFont(font1)
+        self.pushButton_7.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(0, 170, 0);\n"
+"    color: rgb(255, 255, 255)\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(85, 255, 127);\n"
+"	color: rgb(0, 0, 0)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(85, 170, 0);\n"
+"	color: rgb(0, 0, 0)\n"
+"}")
+        self.frame_6 = QFrame(self.centralwidget)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setGeometry(QRect(5, 345, 260, 130))
+        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_10 = QLabel(self.frame_6)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(5, 5, 95, 25))
+        self.label_10.setFont(font)
+        self.label_11 = QLabel(self.frame_6)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(10, 35, 70, 20))
+        self.label_11.setFont(font1)
+        self.comboBox = QComboBox(self.frame_6)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(80, 35, 120, 23))
+        self.radioButton_13 = QRadioButton(self.frame_6)
+        self.radioButton_13.setObjectName(u"radioButton_13")
+        self.radioButton_13.setGeometry(QRect(10, 70, 120, 20))
+        self.label_12 = QLabel(self.frame_6)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(20, 95, 90, 20))
+        self.doubleSpinBox = QDoubleSpinBox(self.frame_6)
+        self.doubleSpinBox.setObjectName(u"doubleSpinBox")
+        self.doubleSpinBox.setGeometry(QRect(110, 95, 87, 23))
+        # 迭代过滤控件
+        self.radioButton_15 = QRadioButton(self.frame_6)
+        self.radioButton_15.setObjectName(u"radioButton_15")
+        self.radioButton_15.setGeometry(QRect(10, 120, 120, 20))
+        self.label_16 = QLabel(self.frame_6)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setGeometry(QRect(140, 120, 70, 20))
+        self.spinBox_iterations = QSpinBox(self.frame_6)
+        self.spinBox_iterations.setObjectName(u"spinBox_iterations")
+        self.spinBox_iterations.setGeometry(QRect(210, 120, 40, 23))
+        self.spinBox_iterations.setMinimum(1)
+        self.spinBox_iterations.setMaximum(10)
+        self.spinBox_iterations.setValue(3)
+        self.label_17 = QLabel(self.frame_6)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setGeometry(QRect(20, 150, 110, 20))
+        self.doubleSpinBox_iter_threshold = QDoubleSpinBox(self.frame_6)
+        self.doubleSpinBox_iter_threshold.setObjectName(u"doubleSpinBox_iter_threshold")
+        self.doubleSpinBox_iter_threshold.setGeometry(QRect(130, 150, 87, 23))
+        self.doubleSpinBox_iter_threshold.setMinimum(0.001)
+        self.doubleSpinBox_iter_threshold.setMaximum(100.0)
+        self.doubleSpinBox_iter_threshold.setValue(0.1)
+        # 调整frame_6的大小以容纳新控件
+        self.frame_6.setGeometry(QRect(5, 345, 260, 180))
+        self.frame_7 = QFrame(self.centralwidget)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setGeometry(QRect(5, 530, 260, 100))
+        self.frame_7.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_13 = QLabel(self.frame_7)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(5, 5, 110, 25))
+        self.label_13.setFont(font)
+        self.label_14 = QLabel(self.frame_7)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setGeometry(QRect(20, 40, 53, 20))
+        self.label_14.setFont(font1)
+        self.label_15 = QLabel(self.frame_7)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setGeometry(QRect(20, 70, 53, 20))
+        self.label_15.setFont(font1)
+        self.lineEdit_4 = QLineEdit(self.frame_7)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setGeometry(QRect(60, 40, 113, 21))
+        self.lineEdit_4.setStyleSheet(u"QLineEdit{\n"
+"background : rgb(85, 255, 127)\n"
+"}")
+        self.lineEdit_5 = QLineEdit(self.frame_7)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.lineEdit_5.setGeometry(QRect(60, 70, 113, 21))
+        self.lineEdit_5.setStyleSheet(u"QLineEdit{\n"
+"background-color: rgb(85, 255, 127);\n"
+"}")
+        self.graphicsView = QGraphicsView(self.centralwidget)
+        self.graphicsView.setObjectName(u"graphicsView")
+        self.graphicsView.setGeometry(QRect(270, 5, 720, 580))
+        self.textBrowser = QTextBrowser(self.centralwidget)
+        self.textBrowser.setObjectName(u"textBrowser")
+        self.textBrowser.setGeometry(QRect(270, 590, 720, 192))
+        font = QFont()
+        font.setPointSize(12)  # 增大字体大小
+        self.textBrowser.setFont(font)
+        self.pushButton_8 = QPushButton(self.centralwidget)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setGeometry(QRect(60, 590, 140, 50))
+        font2 = QFont()
+        font2.setPointSize(14)
+        self.pushButton_8.setFont(font2)
+        self.pushButton_8.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(255, 150, 150);\n"
+"	color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 0, 127);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(200, 0, 0);\n"
+"	color: rgb(255, 255, 255);\n"
+"}")
+        self.radioButton_14 = QRadioButton(self.centralwidget)
+        self.radioButton_14.setObjectName(u"radioButton_14")
+        self.radioButton_14.setGeometry(QRect(140, 660, 140, 30))
+        self.pushButton_9 = QPushButton(self.centralwidget)
+        self.pushButton_9.setObjectName(u"pushButton_9")
+        self.pushButton_9.setGeometry(QRect(5, 650, 130, 45))
+        self.pushButton_9.setFont(font)
+        self.pushButton_9.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(255, 150, 150);\n"
+"	color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 0, 127);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(200, 0, 0);\n"
+"	color: rgb(255, 255, 255);\n"
+"}")
+        self.pushButton_10 = QPushButton(self.centralwidget)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setGeometry(QRect(5, 710, 130, 45))
+        self.pushButton_10.setFont(font)
+        self.pushButton_10.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(255, 150, 150);\n"
+"	color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 0, 127);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(200, 0, 0);\n"
+"	color: rgb(255, 255, 255);\n"
+"}")
+        self.pushButton_11 = QPushButton(self.centralwidget)
+        self.pushButton_11.setObjectName(u"pushButton_11")
+        self.pushButton_11.setGeometry(QRect(140, 710, 130, 45))
+        self.pushButton_11.setFont(font)
+        self.pushButton_11.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(255, 0, 0);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 60, 150);\n"
+"	color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(214, 50, 127);\n"
+"	color: rgb(0, 0, 0);\n"
+"}")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u66f2\u7ebf\u62df\u5408-\u5b9e\u9a8c\u6570\u636e\u6a21\u5f0f", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"X\u5750\u6807", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Y\u5750\u6807", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"\u663e\u793a\u793a\u4f8b\u6570\u636e", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\u914d\u7f6e\u62df\u5408\u4fe1\u606f", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u62df\u5408\u65b9\u5f0f\uff1a", None))
+        self.radioButton_13.setText(QCoreApplication.translate("MainWindow", u"\u662f\u5426\u8fc7\u6ee4\u5f02\u5e38\u503c", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u5f02\u5e38\u503c\u9608\u503c\uff1a", None))
+        self.radioButton_15.setText(QCoreApplication.translate("MainWindow", u"\u8fed\u4ee3\u8fc7\u6ee4", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u8fed\u4ee3\u6b65\u6570\uff1a", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u8fed\u4ee3\u9608\u503c\uff1a", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u914d\u7f6e\u5750\u6807\u8f74\u4fe1\u606f", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"X\u8f74\uff1a", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Y\u8f74\uff1a", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"\u7ed8\u5236\u62df\u5408\u66f2\u7ebf", None))
+        self.radioButton_14.setText(QCoreApplication.translate("MainWindow", u"\u540c\u65f6\u8f93\u51fa\u5408\u7406\u6027\u5206\u6790", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"\u8f93\u51fa\u7edf\u8ba1\u5b66\u6570\u636e", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa\u4e3a\u56fe\u7247", None))
+        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"\u8fd4\u56de\u6a21\u5f0f\u9009\u62e9", None))
+    # retranslateUi
+
+from PySide6.QtWidgets import QMainWindow, QGraphicsScene, QMessageBox
+from PySide6.QtCore import Qt
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+import io
+from PIL import Image
+
+# 导入工具函数
+from utils.experiment_mode_utils import experiment_mode_analysis, find_best_polynomial_fit, \
+    evaluate_curve_quality, format_experiment_results, generate_experiment_plot_data
+from utils.fitting_functions import filter_outliers, get_function_info, fit_data
+
+class ExperimentModeWindow(QMainWindow):
+    """实验数据模式窗口"""
+    def __init__(self):
+        super().__init__()
+        
+        # 设置UI
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        
+        # 初始化数据
+        self.x_data = []
+        self.y_data = []
+        
+        # 初始化绘图
+        self.init_plot()
+        
+        # 设置拟合方法下拉框
+        self.ui.comboBox.addItems(['多项式拟合', '平滑样条拟合'])
+        
+        # 连接信号和槽
+        self.ui.pushButton_7.clicked.connect(self.show_example_data)
+        self.ui.pushButton_8.clicked.connect(self.draw_fitting_curve)
+        self.ui.pushButton_9.clicked.connect(self.output_statistics)
+        self.ui.pushButton_10.clicked.connect(self.export_as_image)
+        self.ui.pushButton_11.clicked.connect(self.return_to_mode_select)
+        
+        # 设置窗口属性
+        self.setWindowTitle("曲线拟合-实验数据模式")
+        self.setFixedSize(1000, 800)
+    
+    def init_plot(self):
+        """初始化绘图区域"""
+        self.scene = QGraphicsScene()
+        self.ui.graphicsView.setScene(self.scene)
+        
+        # 创建matplotlib图形
+        self.fig = Figure(figsize=(7, 5), dpi=100)
+        self.ax = self.fig.add_subplot(111)
+        self.canvas = FigureCanvas(self.fig)
+        self.scene.addWidget(self.canvas)
+        
+        # 设置中文显示
+        plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'Microsoft YaHei', 'SimHei']  # 优先使用支持特殊字符的字体
+        plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+    
+    def show_example_data(self):
+        """显示示例数据"""
+        # 生成示例数据
+        x = np.linspace(0, 10, 20)
+        y = 2 * x**2 + 3 * x + 1 + np.random.normal(0, 5, 20)
+        
+        # 添加一些异常值
+        y[3] += 50
+        y[15] -= 40
+        
+        # 填充到文本框
+        self.ui.textEdit.setPlainText('\n'.join([f'{val:.4f}' for val in x]))
+        self.ui.textEdit_2.setPlainText('\n'.join([f'{val:.4f}' for val in y]))
+        
+        # 更新内部数据
+        self.x_data = x.tolist()
+        self.y_data = y.tolist()
+        
+        # 显示提示
+        QMessageBox.information(self, "成功", "示例数据已加载")
+    
+    def parse_input_data(self):
+        """解析输入数据"""
+        try:
+            # 从文本框获取数据
+            x_text = self.ui.textEdit.toPlainText()
+            y_text = self.ui.textEdit_2.toPlainText()
+            
+            # 分割并转换为浮点数
+            x_data = [float(line.strip()) for line in x_text.split('\n') if line.strip()]
+            y_data = [float(line.strip()) for line in y_text.split('\n') if line.strip()]
+            
+            # 检查数据长度是否一致
+            if len(x_data) != len(y_data):
+                QMessageBox.warning(self, "数据错误", "X和Y数据长度不一致")
+                return None, None
+            
+            # 检查数据是否为空
+            if not x_data or not y_data:
+                QMessageBox.warning(self, "数据错误", "请输入数据")
+                return None, None
+            
+            return x_data, y_data
+        except Exception as e:
+            QMessageBox.warning(self, "数据错误", f"数据格式错误: {str(e)}")
+            return None, None
+    
+    def draw_fitting_curve(self):
+        """绘制拟合曲线并显示详细分析结果，支持同时输出合理性分析选项"""
+        # 显示加载状态
+        self.statusBar().showMessage("正在处理数据并进行拟合分析...")
+        
+        # 解析输入数据
+        x_data, y_data = self.parse_input_data()
+        if x_data is None or y_data is None:
+            self.statusBar().showMessage("数据解析失败", 3000)
+            QMessageBox.warning(self, "警告", "请先输入数据")
+            return
+        
+        # 更新内部数据
+        self.x_data = x_data
+        self.y_data = y_data
+        
+        # 获取拟合参数
+        fit_method = self.ui.comboBox.currentText()
+        filter_outlier = self.ui.radioButton_13.isChecked()
+        outlier_threshold = self.ui.doubleSpinBox.value() if filter_outlier else 3.0
+        enable_iterative_filter = self.ui.radioButton_15.isChecked()
+        iteration_count = self.ui.spinBox_iterations.value() if enable_iterative_filter else 0
+        iteration_threshold = self.ui.doubleSpinBox_iter_threshold.value() if enable_iterative_filter else 0.1
+        show_rationality = self.ui.radioButton_14.isChecked()
+        
+        # 准备数据用于分析
+        x_array = np.array(x_data)
+        y_array = np.array(y_data)
+        
+        # 执行完整的实验模式分析
+        try:
+            # 调用实验模式分析函数，获取完整的分析结果
+            analysis_results = experiment_mode_analysis(
+                x_array, 
+                y_array, 
+                enable_outlier_filter=filter_outlier,
+                outlier_threshold=outlier_threshold,
+                fit_method=fit_method,
+                enable_iterative_filter=enable_iterative_filter,
+                iteration_count=iteration_count,
+                iteration_threshold=iteration_threshold
+            )
+            
+            # 从分析结果中获取数据
+            filtered_x, filtered_y = analysis_results.get('filtered_data', (x_array, y_array))
+            filtered_indices = analysis_results.get('filtered_indices', [])
+            
+            # 确定拟合曲线数据
+            if 'best_poly_fit' in analysis_results and analysis_results['best_poly_fit']:
+                # 多项式拟合
+                best_fit = analysis_results['best_poly_fit']
+                x_smooth = np.linspace(min(filtered_x) * 0.9, max(filtered_x) * 1.1, 1000)
+                y_fit = np.polyval(best_fit['coeffs'], x_smooth)
+            elif 'smooth_curve' in analysis_results and analysis_results['smooth_curve']:
+                # 平滑样条拟合
+                x_smooth, y_fit = analysis_results['smooth_curve']
+            else:
+                # 如果没有拟合曲线，生成默认的
+                x_smooth = np.linspace(min(filtered_x) * 0.9, max(filtered_x) * 1.1, 1000)
+                y_fit = np.zeros_like(x_smooth)  # 占位符
+            
+            # 绘制图形
+            self.ax.clear()
+            
+            # 绘制原始数据点
+            self.ax.scatter(x_array, y_array, color='blue', alpha=0.6, label='原始数据')
+            
+            # 如果过滤了异常值，只显示用红叉标注的异常点
+            if filtered_indices:
+                # 标记被过滤的异常点
+                outlier_x = x_array[filtered_indices]
+                outlier_y = y_array[filtered_indices]
+                self.ax.scatter(outlier_x, outlier_y, color='red', s=100, alpha=0.7, marker='x', label='异常点')
+            elif len(filtered_x) < len(x_array):
+                # 兼容旧版本的过滤方式，同样只标记异常点
+                # 找出被过滤的异常点索引
+                kept_set = set(zip(filtered_x, filtered_y))
+                outlier_x = []
+                outlier_y = []
+                for i, (x, y) in enumerate(zip(x_array, y_array)):
+                    if (x, y) not in kept_set:
+                        outlier_x.append(x)
+                        outlier_y.append(y)
+                if outlier_x:
+                    self.ax.scatter(outlier_x, outlier_y, color='red', s=100, alpha=0.7, marker='x', label='异常点')
+            
+            # 绘制拟合曲线
+            self.ax.plot(x_smooth, y_fit, color='red', linewidth=2, label='拟合曲线')
+            
+            # 设置坐标轴标签
+            x_label = self.ui.lineEdit_4.text() if self.ui.lineEdit_4.text() else 'X轴'
+            y_label = self.ui.lineEdit_5.text() if self.ui.lineEdit_5.text() else 'Y轴'
+            self.ax.set_xlabel(x_label)
+            self.ax.set_ylabel(y_label)
+            
+            # 添加标题和图例
+            self.ax.set_title(f'实验数据{"多项式" if fit_method == "多项式拟合" else "平滑样条"}拟合曲线')
+            self.ax.legend()
+            self.ax.grid(True, linestyle='--', alpha=0.7)
+            
+            # 更新画布
+            self.fig.tight_layout()
+            self.canvas.draw()
+            
+            # 根据选项决定输出内容
+            if show_rationality:
+                # 使用增强的格式化函数生成详细结果
+                detailed_results = format_experiment_results(analysis_results)
+            else:
+                # 充分利用_generate_simplified_results函数，提供更直观的结果摘要
+                detailed_results = self._generate_simplified_results(analysis_results)
+            
+            # 显示结果
+            self.ui.textBrowser.setText(detailed_results)
+            
+            # 滚动到顶部
+            self.ui.textBrowser.moveCursor(QTextCursor.Start)
+            
+            # 更新状态栏
+            data_points = len(filtered_x)
+            outliers = len(filtered_indices)
+            status_msg = f"拟合完成 - 数据点: {data_points}, 异常点: {outliers}"
+            if 'best_poly_fit' in analysis_results and analysis_results['best_poly_fit'] and 'r_squared' in analysis_results['best_poly_fit']:
+                status_msg += f", R²: {analysis_results['best_poly_fit']['r_squared']:.4f}"
+            if 'iteration_history' in analysis_results:
+                status_msg += f", 迭代次数: {len(analysis_results['iteration_history'])}"
+            self.statusBar().showMessage(status_msg, 5000)
+            
+        except Exception as e:
+            import traceback
+            self.statusBar().showMessage("拟合过程出错", 3000)
+            QMessageBox.critical(self, "错误", f"拟合过程出错: {str(e)}")
+            # 添加详细的错误信息到文本浏览器以便调试
+            self.ui.textBrowser.setText(f"拟合过程出错: {str(e)}")
+            self.ui.textBrowser.append(f"\n详细错误信息:\n{traceback.format_exc()}")
+            
+    def _generate_simplified_results(self, analysis_results: dict) -> str:
+        """生成简化版的结果输出，聚焦关键信息"""
+        output = []
+        
+        # 基本信息
+        output.append("=== 拟合结果概览 ===")
+        output.append("=" * 30)
+        output.append(f"原始数据点数量: {len(analysis_results['original_data'][0])}")
+        output.append(f"过滤后数据点数量: {len(analysis_results['filtered_data'][0])}")
+        
+        if len(analysis_results['filtered_indices']) > 0:
+            outlier_percent = len(analysis_results['filtered_indices']) / len(analysis_results['original_data'][0]) * 100
+            output.append(f"过滤的异常点: {len(analysis_results['filtered_indices'])} ({outlier_percent:.1f}%)")
+        
+        # 拟合信息
+        quality = analysis_results['curve_quality']
+        output.append("\n=== 拟合质量 ===")
+        output.append(f"拟合优度等级: {quality['goodness_of_fit']}")
+        output.append(f"数据代表性: {quality['data_representativeness']}")
+        
+        # 新增：残差正态分布合理性判断
+        if 'normality_analysis' in quality and quality['normality_analysis']:
+            normality_analysis = quality['normality_analysis']
+            normality_icon = "✅" if normality_analysis['normality_assessment'] == "良好" else "⚠️" if normality_analysis['normality_assessment'] == "一般" else "❌"
+            output.append(f"\n=== 合理性判断 ===")
+            output.append(f"{normality_icon} 正态性评估: {normality_analysis['normality_assessment']}")
+            # 只显示最核心的解释，避免输出过长
+            interpretation = normality_analysis['normality_interpretation']
+            if len(interpretation) > 60:
+                interpretation = interpretation[:57] + "..."
+            output.append(f"解释: {interpretation}")
+        
+        # 关键误差指标
+        if quality['error_analysis']:
+            error_analysis = quality['error_analysis']
+            output.append(f"均方根误差(RMSE): {error_analysis.get('std_error', 0):.6f}")
+            if 'mean_relative_error' in error_analysis:
+                output.append(f"平均相对误差: {error_analysis['mean_relative_error']:.2f}%")
+        
+        # 简要建议
+            if quality['recommendations']:
+                output.append("\n=== 主要建议 ===")
+                # 只显示前3条最重要的建议
+                for i, rec in enumerate(quality['recommendations'][:3], 1):
+                    output.append(f"{i}. {rec}")
+                if len(quality['recommendations']) > 3:
+                    output.append(f"... 还有 {len(quality['recommendations']) - 3} 条建议，请点击'输出统计学数据'查看完整分析")
+            
+            # 迭代过滤信息
+            if 'iteration_history' in analysis_results and analysis_results['iteration_history']:
+                output.append("\n=== 迭代过滤信息 ===")
+                output.append(f"迭代次数: {len(analysis_results['iteration_history'])}")
+                for iter_info in analysis_results['iteration_history']:
+                    output.append(f"第{iter_info['iteration']}次迭代: 移除{iter_info['removed_count']}点, "
+                                 f"剩余{iter_info['remaining_count']}点")
+        
+        return "\n".join(output)
+    
+    def output_statistics(self):
+        """输出数据的统计信息，优化用户体验"""
+        try:
+            # 确保有数据
+            if not self.x_data or not self.y_data:
+                QMessageBox.warning(self, "警告", "请先绘制拟合曲线")
+                return
+            
+            # 显示加载状态
+            self.statusBar().showMessage("正在生成详细统计分析...")
+            
+            # 准备数据用于分析
+            x_array = np.array(self.x_data)
+            y_array = np.array(self.y_data)
+            
+            # 获取当前设置的参数
+            filter_outlier = self.ui.radioButton_13.isChecked()
+            outlier_threshold = self.ui.doubleSpinBox.value() if filter_outlier else 3.0
+            enable_iterative_filter = self.ui.radioButton_15.isChecked()
+            iteration_count = self.ui.spinBox_iterations.value() if enable_iterative_filter else 0
+            iteration_threshold = self.ui.doubleSpinBox_iter_threshold.value() if enable_iterative_filter else 0.1
+            fit_method = self.ui.comboBox.currentText()
+            
+            # 调用实验模式分析函数，获取完整的分析结果，避免重复计算
+            analysis_results = experiment_mode_analysis(
+                x_array, 
+                y_array, 
+                enable_outlier_filter=filter_outlier,
+                outlier_threshold=outlier_threshold,
+                fit_method=fit_method,
+                enable_iterative_filter=enable_iterative_filter,
+                iteration_count=iteration_count,
+                iteration_threshold=iteration_threshold
+            )
+            
+            # 使用format_experiment_results生成详细的统计和分析结果
+            detailed_results = format_experiment_results(analysis_results)
+            
+            # 显示结果
+            self.ui.textBrowser.setText(detailed_results)
+            
+            # 滚动到顶部
+            self.ui.textBrowser.moveCursor(QTextCursor.Start)
+            
+            # 完成后更新状态栏
+            data_points = len(analysis_results['filtered_data'][0])
+            outliers = len(analysis_results['filtered_indices'])
+            status_msg = f"统计分析完成 - 数据点: {data_points}, 异常点: {outliers}"
+            if 'iteration_history' in analysis_results:
+                status_msg += f", 迭代次数: {len(analysis_results['iteration_history'])}"
+            self.statusBar().showMessage(status_msg, 5000)
+            
+        except Exception as e:
+            self.statusBar().showMessage("生成统计信息时出错", 3000)
+            import traceback
+            self.ui.textBrowser.setText(f"计算统计信息时出错: {str(e)}")
+            self.ui.textBrowser.append(f"\n详细错误信息:\n{traceback.format_exc()}")
+    
+    def _generate_simplified_results(self, analysis_results: dict) -> str:
+        """生成简化版的结果，用于在绘图时快速显示"""
+        output = []
+        output.append("📊 实验拟合结果摘要 📊")
+        output.append("=" * 40)
+        
+        # 基本信息
+        output.append(f"数据点数量: {len(analysis_results['filtered_data'][0])}")
+        if len(analysis_results['filtered_indices']) > 0:
+            outlier_percent = len(analysis_results['filtered_indices']) / len(analysis_results['original_data'][0]) * 100
+            output.append(f"异常点: {len(analysis_results['filtered_indices'])} ({outlier_percent:.1f}%)")
+        
+        # 多项式拟合结果
+        if 'best_poly_fit' in analysis_results and analysis_results['best_poly_fit']:
+            poly = analysis_results['best_poly_fit']
+            output.append("\n🔍 多项式拟合:")
+            output.append(f"  阶数: {poly['degree']}")
+            if 'r_squared' in poly:
+                output.append(f"  R²: {poly['r_squared']:.4f}")
+            if 'rmse' in poly:
+                output.append(f"  RMSE: {poly['rmse']:.6f}")
+                
+            # 过拟合风险简要提示
+            if 'adjusted_r_squared' in poly:
+                r_diff = poly['r_squared'] - poly['adjusted_r_squared']
+                if r_diff > 0.1:
+                    output.append("  ⚠️ 注意: 可能存在过拟合风险")
+        
+        # 新增：残差正态分布合理性判断（针对绘图显示的简化版）
+        if 'curve_quality' in analysis_results and analysis_results['curve_quality']:
+            quality = analysis_results['curve_quality']
+            if 'normality_analysis' in quality and quality['normality_analysis']:
+                normality_analysis = quality['normality_analysis']
+                normality_icon = "✅" if normality_analysis['normality_assessment'] == "良好" else "⚠️" if normality_analysis['normality_assessment'] == "一般" else "❌"
+                output.append("\n📊 合理性判断:")
+                output.append(f"  {normality_icon} 正态性: {normality_analysis['normality_assessment']}")
+        
+        # 平滑曲线信息
+        if 'smooth_curve' in analysis_results and analysis_results['smooth_curve']:
+            output.append("\n📈 平滑样条拟合已完成")
+        
+        # 质量评估简要信息
+        quality = analysis_results['curve_quality']
+        output.append("\n🌟 质量评估:")
+        output.append(f"  拟合优度: {quality['goodness_of_fit']}")
+        output.append(f"  数据代表性: {quality['data_representativeness']}")
+        
+        # 迭代过滤信息
+        if 'iteration_history' in analysis_results and analysis_results['iteration_history']:
+            output.append("\n🔄 迭代过滤结果:")
+            output.append(f"  迭代次数: {len(analysis_results['iteration_history'])}")
+            for iter_info in analysis_results['iteration_history']:
+                output.append(f"  第{iter_info['iteration']}次: -{iter_info['removed_count']}点, "
+                             f"剩余{iter_info['remaining_count']}点")
+        
+        # 关键建议
+        output.append("\n💡 关键建议:")
+        # 提取最重要的2-3条建议
+        recommendations = []
+        n_points = len(analysis_results['filtered_data'][0])
+        if n_points < 10:
+            recommendations.append("增加样本量至少至10个数据点")
+        
+        if 'best_poly_fit' in analysis_results and analysis_results['best_poly_fit']:
+            poly = analysis_results['best_poly_fit']
+            if poly.get('degree', 0) > 4:
+                recommendations.append("考虑降低多项式阶数以避免过拟合")
+        
+        # 异常点建议
+        if len(analysis_results['filtered_indices']) > 0:
+            outlier_percent = len(analysis_results['filtered_indices']) / len(analysis_results['original_data'][0]) * 100
+            if outlier_percent > 20:
+                recommendations.append("异常点比例过高，建议检查原始数据")
+        
+        if recommendations:
+            for i, rec in enumerate(recommendations[:3], 1):
+                output.append(f"  {i}. {rec}")
+        else:
+            output.append("  ✅ 当前拟合情况良好")
+        
+        output.append("\n💡 提示: 点击'输出统计信息'查看详细分析")
+        
+        return "\n".join(output)
+    
+    def export_as_image(self):
+        """导出为图片"""
+        # 检查是否有绘制的图形
+        if not self.ax.lines and not self.ax.collections:
+            QMessageBox.warning(self, "警告", "请先绘制拟合曲线")
+            return
+        
+        try:
+            # 创建缓冲区
+            buffer = io.BytesIO()
+            
+            # 保存图形到缓冲区
+            self.fig.savefig(buffer, format='png', dpi=300, bbox_inches='tight')
+            buffer.seek(0)
+            
+            # 使用PIL保存图片
+            img = Image.open(buffer)
+            img.save('实验数据拟合结果.png')
+            
+            QMessageBox.information(self, "成功", "图片已保存为 '实验数据拟合结果.png'")
+        except Exception as e:
+            QMessageBox.critical(self, "错误", f"保存图片失败: {str(e)}")
+    
+    def smooth_curve(self, x, y):
+        """对曲线进行平滑处理，使用更高级的样条插值方法"""
+        # 排序数据点
+        sorted_indices = np.argsort(x)
+        sorted_x = x[sorted_indices]
+        sorted_y = y[sorted_indices]
+        
+        try:
+            # 尝试使用scipy的样条插值
+            from scipy.interpolate import make_interp_spline
+            
+            # 为了更好的平滑效果，使用3次样条，但数据点不足时降低阶数
+            k = min(3, len(sorted_x) - 1)
+            if k >= 1:
+                spl = make_interp_spline(sorted_x, sorted_y, k=k)
+                # 生成平滑曲线
+                smoothed_y = spl(sorted_x)
+                
+                # 恢复原始顺序
+                original_order = np.argsort(sorted_indices)
+                return smoothed_y[original_order]
+        except ImportError:
+            # 如果没有scipy，使用移动平均
+            pass
+        except Exception:
+            # 如果样条插值失败，使用移动平均
+            pass
+        
+        # 使用移动平均作为后备方案
+        window_size = max(2, min(5, len(y) // 3))
+        smoothed_y = np.convolve(sorted_y, np.ones(window_size)/window_size, mode='same')
+        
+        # 处理边界情况
+        smoothed_y[0] = sorted_y[0]
+        smoothed_y[-1] = sorted_y[-1]
+        
+        # 恢复原始顺序
+        original_order = np.argsort(sorted_indices)
+        return smoothed_y[original_order]
+    
+    def _detect_outliers(self, x, y):
+        """检测数据中的异常点，使用IQR方法"""
+        # 使用IQR方法检测异常点
+        if len(x) > 3:
+            # 使用简单线性回归计算残差
+            try:
+                # 计算残差
+                z = np.polyfit(x, y, 1)
+                p = np.poly1d(z)
+                residuals = y - p(x)
+                
+                # 计算IQR
+                Q1 = np.percentile(residuals, 25)
+                Q3 = np.percentile(residuals, 75)
+                IQR = Q3 - Q1
+                
+                # 定义异常值边界
+                lower_bound = Q1 - 1.5 * IQR
+                upper_bound = Q3 + 1.5 * IQR
+                
+                # 识别异常点
+                is_outlier = (residuals < lower_bound) | (residuals > upper_bound)
+                
+                # 获取正常点的索引和异常点的索引
+                valid_indices = [i for i, outlier in enumerate(is_outlier) if not outlier]
+                outlier_indices = [i for i, outlier in enumerate(is_outlier) if outlier]
+                
+                # 如果过滤后的数据点过少，回退到不过滤
+                if len(valid_indices) < max(3, len(x) * 0.5):
+                    return [], x, y
+                
+                return outlier_indices, x[valid_indices], y[valid_indices]
+            except:
+                # 如果计算出错，回退到不过滤
+                pass
+        
+        # 默认不过滤
+        return [], x, y
+    
+    def polynomial_fitting(self, x, y, degree):
+        """多项式拟合，返回系数、拟合函数、R²值和残差"""
+        # 进行多项式拟合
+        coeffs = np.polyfit(x, y, degree)
+        poly_func = np.poly1d(coeffs)
+        
+        # 计算R²值
+        y_mean = np.mean(y)
+        ss_total = np.sum((y - y_mean)** 2)
+        ss_residual = np.sum((y - poly_func(x))** 2)
+        r_squared = 1 - (ss_residual / ss_total) if ss_total > 0 else 0
+        
+        # 计算残差
+        residuals = y - poly_func(x)
+        
+        return coeffs, poly_func, r_squared, residuals
+    
+    def evaluate_curve_quality(self, results):
+        """评估曲线拟合质量"""
+        quality = {
+            'goodness_of_fit': '未知',
+            'data_representativeness': '未知'
+        }
+        
+        # 评估拟合优度
+        if 'best_poly_fit' in results and results['best_poly_fit']:
+            r_squared = results['best_poly_fit'].get('r_squared', 0)
+            if r_squared >= 0.95:
+                quality['goodness_of_fit'] = '优秀'
+            elif r_squared >= 0.85:
+                quality['goodness_of_fit'] = '良好'
+            elif r_squared >= 0.70:
+                quality['goodness_of_fit'] = '一般'
+            elif r_squared >= 0.50:
+                quality['goodness_of_fit'] = '及格'
+            else:
+                quality['goodness_of_fit'] = '不及格'
+        elif 'smooth_curve' in results and results['smooth_curve']:
+            r_squared = results['smooth_curve'].get('r_squared', 0)
+            if r_squared >= 0.90:
+                quality['goodness_of_fit'] = '优秀'
+            elif r_squared >= 0.80:
+                quality['goodness_of_fit'] = '良好'
+            elif r_squared >= 0.65:
+                quality['goodness_of_fit'] = '一般'
+            elif r_squared >= 0.50:
+                quality['goodness_of_fit'] = '及格'
+            else:
+                quality['goodness_of_fit'] = '不及格'
+        
+        # 评估数据代表性
+        n_original = len(results.get('original_data', [([], [])])[0])
+        n_filtered = len(results.get('filtered_data', [([], [])])[0])
+        if n_original > 0:
+            outlier_ratio = 1 - n_filtered / n_original
+        else:
+            outlier_ratio = 0
+        
+        if outlier_ratio < 0.1 and n_filtered >= 10:
+            quality['data_representativeness'] = '优秀'
+        elif outlier_ratio < 0.2 and n_filtered >= 7:
+            quality['data_representativeness'] = '良好'
+        elif outlier_ratio < 0.3 and n_filtered >= 5:
+            quality['data_representativeness'] = '一般'
+        elif outlier_ratio < 0.4 and n_filtered >= 3:
+            quality['data_representativeness'] = '及格'
+        else:
+            quality['data_representativeness'] = '不及格'
+        
+        return quality
+    
+    def return_to_mode_select(self):
+        """返回模式选择界面"""
+        # 延迟导入以避免循环导入
+        from gui.ui_choose_mode import ChooseModeWindow
+        
+        # 关闭当前窗口
+        self.close()
+        
+        # 创建并显示模式选择窗口
+        self.mode_window = ChooseModeWindow()
+        self.mode_window.show()
+
