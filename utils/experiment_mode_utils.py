@@ -800,9 +800,9 @@ def format_experiment_results(results: Dict[str, Any]) -> str:
         # 添加异常点评价
         if outlier_percent < 5:
             output.append(f"✅ 异常点评价: 数据质量良好，异常点较少")
-        elif outlier_percent < 10:
+        elif outlier_percent < 15:
             output.append(f"⚠️ 异常点评价: 存在少量异常点")
-        elif outlier_percent < 20:
+        elif outlier_percent < 30:
             output.append(f"⚠️ 异常点评价: 异常点比例中等，建议检查原始数据")
         else:
             output.append(f"❌ 异常点评价: 异常点比例较高，数据可靠性可能受影响")

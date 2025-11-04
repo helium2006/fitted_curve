@@ -8,6 +8,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QHBoxLayout, QWidget, QFileDialog, QMessageBox
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
 from gui.ui_choose_mode import ChooseModeWindow
 
 def main():
@@ -18,6 +19,10 @@ def main():
     # 设置应用程序信息
     app.setApplicationName("曲线拟合程序")
     app.setOrganizationName("Curve Fitting Tools")
+    
+    # 设置应用程序图标
+    icon_path = r"./resources/icon.ico"
+    app.setWindowIcon(QIcon(icon_path))
     
     # 确保中文正常显示
     font = app.font()

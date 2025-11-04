@@ -39,6 +39,9 @@ class Ui_MainWindow(object):
         self.textEdit = QTextEdit(self.frame_5)
         self.textEdit.setObjectName(u"textEdit")
         self.textEdit.setGeometry(QRect(5, 35, 120, 260))
+        font1 = QFont()
+        font1.setPointSize(10)
+        self.textEdit.setFont(font1)
         self.textEdit.setStyleSheet(u"QTextEdit{\n"
 "background : rgb(85, 255, 127)\n"
 "}")
@@ -51,6 +54,9 @@ class Ui_MainWindow(object):
         self.textEdit_2 = QTextEdit(self.frame_5)
         self.textEdit_2.setObjectName(u"textEdit_2")
         self.textEdit_2.setGeometry(QRect(135, 35, 120, 260))
+        font4 = QFont()
+        font4.setPointSize(12)
+        self.textEdit_2.setFont(font4)
         self.textEdit_2.setStyleSheet(u"QTextEdit{\n"
 "background : rgb(85, 255, 127)\n"
 "}")
@@ -60,7 +66,7 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
         self.pushButton_7 = QPushButton(self.centralwidget)
         self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(90, 310, 85, 30))
+        self.pushButton_7.setGeometry(QRect(25, 310, 85, 30))
         font1 = QFont()
         font1.setPointSize(10)
         self.pushButton_7.setFont(font1)
@@ -101,6 +107,10 @@ class Ui_MainWindow(object):
         self.doubleSpinBox = QDoubleSpinBox(self.frame_6)
         self.doubleSpinBox.setObjectName(u"doubleSpinBox")
         self.doubleSpinBox.setGeometry(QRect(110, 95, 87, 23))
+        self.doubleSpinBox.setMinimum(0.0)
+        self.doubleSpinBox.setMaximum(10.0)
+        self.doubleSpinBox.setValue(1.00)
+        self.doubleSpinBox.setSingleStep(0.01)
         self.graphicsView = QGraphicsView(self.centralwidget)
         self.graphicsView.setObjectName(u"graphicsView")
         self.graphicsView.setGeometry(QRect(270, 5, 720, 580))
@@ -189,6 +199,7 @@ class Ui_MainWindow(object):
         self.textBrowser_2 = QTextBrowser(self.frame_7)
         self.textBrowser_2.setObjectName(u"textBrowser_2")
         self.textBrowser_2.setGeometry(QRect(5, 30, 240, 60))
+        self.textBrowser_2.setFont(font4)
         self.textBrowser_2.setStyleSheet(u"background-color: rgb(235, 235, 235);")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -219,6 +230,7 @@ class Ui_MainWindow(object):
     # retranslateUi
 
 from PySide6.QtWidgets import QMainWindow, QGraphicsScene, QMessageBox
+from PySide6.QtGui import QIcon
 from PySide6.QtCore import Qt
 import numpy as np
 import matplotlib.pyplot as plt
@@ -262,9 +274,35 @@ class MathModeWindow(QMainWindow):
         self.ui.pushButton_11.clicked.connect(self.return_to_mode_select)
         self.ui.comboBox.currentIndexChanged.connect(self.on_function_type_changed)
         
+        # 添加清除数据按钮
+        self.clear_data_button = QPushButton("清除数据", self)
+        self.clear_data_button.setGeometry(QRect(155, 310, 85, 30))
+        fontx=QFont()
+        fontx.setPointSize(10)
+        self.clear_data_button.setFont(fontx)
+        self.clear_data_button.setStyleSheet("""
+            QPushButton{
+                background-color: rgb(255, 165, 0);
+                color: rgb(255, 255, 255)
+            }
+            QPushButton:hover{
+                background-color: rgb(255, 215, 0);
+                color: rgb(0, 0, 0)
+            }
+            QPushButton:pressed{
+                background-color: rgb(255, 140, 0);
+                color: rgb(0, 0, 0)
+            }
+        """)
+        self.clear_data_button.clicked.connect(self.clear_data)
+        
         # 设置窗口属性
         self.setWindowTitle("曲线拟合-数学模式（回归计算）")
         self.setFixedSize(1000, 800)
+        
+        # 设置窗口图标
+        icon_path = r"./resources/icon.ico"
+        self.setWindowIcon(QIcon(icon_path))
         
         # 显示初始回归方程格式
         self.on_function_type_changed(0)
@@ -673,6 +711,37 @@ class MathModeWindow(QMainWindow):
             self.ui.textBrowser.setText(coeff_text)
         except Exception as e:
             self.ui.textBrowser.setText(f"显示回归系数时出错: {str(e)}")
+    
+    def clear_data(self):
+        """清除所有数据"""
+        try:
+            # 清除文本框内容
+            self.ui.textEdit.clear()
+            self.ui.textEdit_2.clear()
+            
+            # 清空内部数据
+            self.x_data = []
+            self.y_data = []
+            self.current_results = None
+            
+            # 清空绘图区域
+            self.ax.clear()
+            self.ax.set_title('数据可视化')
+            self.ax.set_xlabel('X轴')
+            self.ax.set_ylabel('Y轴')
+            self.ax.grid(True)
+            self.canvas.draw()
+            
+            # 清空结果显示
+            self.ui.textBrowser.clear()
+            
+            # 更新状态栏
+            self.statusBar().showMessage("数据已清除", 3000)
+            
+            # 显示提示
+            QMessageBox.information(self, "成功", "所有数据已清除")
+        except Exception as e:
+            QMessageBox.warning(self, "错误", f"清除数据时出错: {str(e)}")
     
     def return_to_mode_select(self):
         """返回模式选择界面"""

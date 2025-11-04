@@ -506,10 +506,10 @@ def get_available_function_types() -> List[str]:
         '线性函数 (y = a*x + b)',
         '二次函数 (y = a*x² + b*x + c)',
         '三次函数 (y = a*x³ + b*x² + c*x + d)',
-        '指数函数 (y = a*e^(b*x))',
-        '对数函数 (y = a*ln(x) + b)',
+        '指数函数 (y = a*e^[b*x])',
+        '对数函数 (y = a*ln[x] + b)',
         '幂函数 (y = a*x^b)',
-        '正弦函数 (y = a*sin(b*x + c) + d)'
+        '正弦函数 (y = a*sin[b*x + c] + d)'
     ]
 
 def validate_function_type(func_type: str) -> bool:
@@ -585,10 +585,10 @@ def get_function_display_name(func_type: str) -> str:
             'linear': '线性函数 (y = a*x + b)',
             'quadratic': '二次函数 (y = a*x² + b*x + c)',
             'cubic': '三次函数 (y = a*x³ + b*x² + c*x + d)',
-            'exponential': '指数函数 (y = a*e^(b*x))',
-            'logarithmic': '对数函数 (y = a*ln(x) + b)',
+            'exponential': f'指数函数 (y = a*e[b*x])',
+            'logarithmic': f'对数函数 (y = a*ln[x] + b)',
             'power': '幂函数 (y = a*x^b)',
-            'sine': '正弦函数 (y = a*sin(b*x + c) + d)'
+            'sine': '正弦函数 (y = a*sin[b*x + c] + d)'
         }
         
         if func_type in type_map:

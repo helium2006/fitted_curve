@@ -15,7 +15,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QFrame,
+from PySide6.QtWidgets import (QApplication, QComboBox, QCheckBox, QDoubleSpinBox, QFrame,
     QGraphicsView, QLabel, QLineEdit, QMainWindow,
     QPushButton, QRadioButton, QSizePolicy, QSpinBox,
     QStatusBar, QTextBrowser, QTextEdit, QWidget)
@@ -38,6 +38,9 @@ class Ui_MainWindow(object):
         self.textEdit = QTextEdit(self.frame_5)
         self.textEdit.setObjectName(u"textEdit")
         self.textEdit.setGeometry(QRect(5, 35, 120, 260))
+        font4=QFont()
+        font4.setPointSize(10)
+        self.textEdit.setFont(font4)
         self.textEdit.setStyleSheet(u"QTextEdit{\n"
 "background : rgb(85, 255, 127)\n"
 "}")
@@ -50,6 +53,7 @@ class Ui_MainWindow(object):
         self.textEdit_2 = QTextEdit(self.frame_5)
         self.textEdit_2.setObjectName(u"textEdit_2")
         self.textEdit_2.setGeometry(QRect(135, 35, 120, 260))
+        self.textEdit_2.setFont(font4)
         self.textEdit_2.setStyleSheet(u"QTextEdit{\n"
 "background : rgb(85, 255, 127)\n"
 "}")
@@ -59,7 +63,7 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
         self.pushButton_7 = QPushButton(self.centralwidget)
         self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(90, 310, 85, 30))
+        self.pushButton_7.setGeometry(QRect(25, 310, 85, 30))
         font1 = QFont()
         font1.setPointSize(10)
         self.pushButton_7.setFont(font1)
@@ -110,9 +114,9 @@ class Ui_MainWindow(object):
         self.doubleSpinBox = QDoubleSpinBox(self.frame_6)
         self.doubleSpinBox.setObjectName(u"doubleSpinBox")
         self.doubleSpinBox.setGeometry(QRect(110, 100, 87, 23))
-        self.doubleSpinBox.setMinimum(0.001)
-        self.doubleSpinBox.setMaximum(100.0)
-        self.doubleSpinBox.setValue(0.1)
+        self.doubleSpinBox.setMinimum(0.01)
+        self.doubleSpinBox.setMaximum(10.0)
+        self.doubleSpinBox.setValue(1.00)
         self.doubleSpinBox.setSingleStep(0.01)
         self.frame_7 = QFrame(self.centralwidget)
         self.frame_7.setObjectName(u"frame_7")
@@ -170,7 +174,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(200, 0, 0);\n"
 "	color: rgb(255, 255, 255);\n"
 "}")
-        self.radioButton_14 = QRadioButton(self.centralwidget)
+        self.radioButton_14 = QCheckBox(self.centralwidget)
         self.radioButton_14.setObjectName(u"radioButton_14")
         self.radioButton_14.setGeometry(QRect(140, 660, 140, 30))
         self.pushButton_9 = QPushButton(self.centralwidget)

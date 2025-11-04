@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from PySide6.QtWidgets import QMainWindow, QGraphicsScene, QMessageBox
-from PySide6.QtGui import QTextCursor
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QMainWindow, QGraphicsScene, QMessageBox, QPushButton
+from PySide6.QtGui import QTextCursor, QIcon
+from PySide6.QtCore import Qt, QRect
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -44,9 +44,37 @@ class ExperimentModeWindow(QMainWindow):
         self.ui.pushButton_10.clicked.connect(self.export_as_image)
         self.ui.pushButton_11.clicked.connect(self.return_to_mode_select)
         
+        # 添加清除数据按钮
+        from PySide6.QtGui import QFont
+        font1 = QFont()
+        font1.setPointSize(10)
+        
+        self.clear_data_button = QPushButton("清除数据", self)
+        self.clear_data_button.setGeometry(QRect(155, 310, 85, 30))
+        self.clear_data_button.setFont(font1)
+        self.clear_data_button.setStyleSheet("""
+            QPushButton{
+                background-color: rgb(255, 165, 0);
+                color: rgb(255, 255, 255)
+            }
+            QPushButton:hover{
+                background-color: rgb(255, 215, 0);
+                color: rgb(0, 0, 0)
+            }
+            QPushButton:pressed{
+                background-color: rgb(255, 140, 0);
+                color: rgb(0, 0, 0)
+            }
+        """)
+        self.clear_data_button.clicked.connect(self.clear_data)
+        
         # 设置窗口属性
         self.setWindowTitle("曲线拟合-实验数据模式")
         self.setFixedSize(1000, 800)
+        
+        # 设置窗口图标
+        icon_path = r"./resources/icon.ico"
+        self.setWindowIcon(QIcon(icon_path))
     
     def init_plot(self):
         """初始化绘图区域"""
@@ -102,7 +130,7 @@ class ExperimentModeWindow(QMainWindow):
             
             # 检查数据是否为空
             if not x_data or not y_data:
-                QMessageBox.warning(self, "数据错误", "请输入数据")
+                QMessageBox.warning(self, "数据错误", "请先输入数据")
                 return None, None
             
             return x_data, y_data
@@ -119,7 +147,7 @@ class ExperimentModeWindow(QMainWindow):
         x_data, y_data = self.parse_input_data()
         if x_data is None or y_data is None:
             self.statusBar().showMessage("数据解析失败", 3000)
-            QMessageBox.warning(self, "警告", "请先输入数据")
+            #QMessageBox.warning(self, "警告", "请先输入数据")
             return
         
         # 更新内部数据
@@ -392,6 +420,36 @@ class ExperimentModeWindow(QMainWindow):
             
         except Exception as e:
             QMessageBox.critical(self, "错误", f"导出图像失败: {str(e)}")
+    
+    def clear_data(self):
+        """清除所有数据"""
+        try:
+            # 清除文本框内容
+            self.ui.textEdit.clear()
+            self.ui.textEdit_2.clear()
+            
+            # 清空内部数据
+            self.x_data = []
+            self.y_data = []
+            
+            # 清空绘图区域
+            self.ax.clear()
+            self.ax.set_title('实验数据拟合')
+            self.ax.set_xlabel('X轴')
+            self.ax.set_ylabel('Y轴')
+            self.ax.grid(True, linestyle='--', alpha=0.7)
+            self.canvas.draw()
+            
+            # 清空结果显示
+            self.ui.textBrowser.clear()
+            
+            # 更新状态栏
+            self.statusBar().showMessage("数据已清除", 3000)
+            
+            # 显示提示
+            QMessageBox.information(self, "成功", "所有数据已清除")
+        except Exception as e:
+            QMessageBox.warning(self, "错误", f"清除数据时出错: {str(e)}")
     
     def return_to_mode_select(self):
         """返回模式选择界面"""
