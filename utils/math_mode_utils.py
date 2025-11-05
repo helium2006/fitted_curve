@@ -55,8 +55,35 @@ def iterative_filter_outliers(x_data: np.ndarray, y_data: np.ndarray, func_type:
             # 使用MAD和传入的阈值参数
             actual_threshold = threshold * mad / 0.6745
         
-        # 创建掩码，保留绝对值残差小于阈值的点
-        mask = np.abs(residuals - median_residual) <= actual_threshold
+        # 计算每个点的绝对残差
+        abs_residuals = np.abs(residuals - median_residual)
+        
+        # 找出所有超出阈值的点
+        outlier_indices = np.where(abs_residuals > actual_threshold)[0]
+        
+        # 如果没有超出阈值的点，停止迭代
+        if len(outlier_indices) == 0:
+            iteration_history.append({
+                'iteration': iteration + 1,
+                'removed_count': 0,
+                'remaining_count': len(current_x),
+                'threshold_used': float(actual_threshold)
+            })
+            break
+        
+        # 计算要移除的点数量：超出阈值点中误差最大的前25%（向下取整）
+        points_to_remove = max(1, int(np.floor(len(outlier_indices) * 0.25)))
+        
+        # 获取超出阈值点的残差值
+        outlier_residuals = abs_residuals[outlier_indices]
+        
+        # 按残差大小排序，找出要移除的索引
+        sorted_indices = np.argsort(outlier_residuals)[::-1]  # 降序排列
+        indices_to_remove = outlier_indices[sorted_indices[:points_to_remove]]
+        
+        # 创建掩码，保留未被移除的点
+        mask = np.ones_like(current_x, dtype=bool)
+        mask[indices_to_remove] = False
         
         # 计算移除的点数量
         removed_count = len(current_x) - np.sum(mask)
@@ -68,10 +95,6 @@ def iterative_filter_outliers(x_data: np.ndarray, y_data: np.ndarray, func_type:
             'remaining_count': int(np.sum(mask)),
             'threshold_used': float(actual_threshold)
         })
-        
-        # 如果没有过滤掉任何点，停止迭代
-        if removed_count == 0:
-            break
         
         # 更新数据和索引
         current_x = current_x[mask]

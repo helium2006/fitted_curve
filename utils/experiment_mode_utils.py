@@ -105,12 +105,32 @@ def experiment_mode_analysis(x_data: np.ndarray, y_data: np.ndarray, enable_outl
             else:
                 absolute_threshold = iteration_threshold  # 绝对值阈值
             
-            # 过滤超出阈值的点
-            mask = residuals <= absolute_threshold
+            # 找出所有超出阈值的点
+            outlier_indices = np.where(residuals > absolute_threshold)[0]
             
-            # 如果没有过滤掉任何点，停止迭代
-            if np.all(mask):
+            # 如果没有超出阈值的点，停止迭代
+            if len(outlier_indices) == 0:
+                iteration_history.append({
+                    'iteration': iteration + 1,
+                    'removed_count': 0,
+                    'remaining_count': len(current_x),
+                    'threshold_used': absolute_threshold
+                })
                 break
+            
+            # 计算要移除的点数量：超出阈值点中误差最大的前25%（向下取整）
+            points_to_remove = max(1, int(np.floor(len(outlier_indices) * 0.25)))
+            
+            # 获取超出阈值点的残差值
+            outlier_residuals = residuals[outlier_indices]
+            
+            # 按残差大小排序，找出要移除的索引
+            sorted_indices = np.argsort(outlier_residuals)[::-1]  # 降序排列
+            indices_to_remove = outlier_indices[sorted_indices[:points_to_remove]]
+            
+            # 创建掩码，保留未被移除的点
+            mask = np.ones_like(current_x, dtype=bool)
+            mask[indices_to_remove] = False
             
             # 更新数据和索引
             iteration_history.append({
